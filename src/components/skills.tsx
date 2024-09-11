@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import styles from '../styles/Skills.module.css';
 
 export default function Skills() {
@@ -14,7 +13,7 @@ export default function Skills() {
                 <h2 className="text-3xl font-bold mb-8">Skills</h2>
                 <div className={styles.container}>
                     {skills.map((skill, index) => (
-                        <div className={`${styles.wrap} animate pop`}>
+                        <div key={index} className={`${styles.wrap} animate pop`}> {/* Added key prop */}
                             <div className={styles.overlay}>
                                 <div className={`${styles['overlay-content']} animate slide-up delay-2`}>
                                     <h1 className="text-black animate slide-up pop delay-4">{skill.title}</h1>
